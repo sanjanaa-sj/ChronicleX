@@ -36,7 +36,7 @@ This version explains that the News API's 200 hits limit is a current constraint
 This project was a great learning experience that helped me improve my JavaScript skills. It gave me a deeper understanding of working with external APIs, handling CORS issues, and deploying a project to a serverless platform like Vercel. Despite facing some challenges along the way, I was able to overcome them through research, experimentation, and problem-solving.
 
 ---
-SCREENSHOTS:
+**SCREENSHOTS:**
 <img width="1898" height="864" alt="image" src="https://github.com/user-attachments/assets/c49cd85a-3938-45d4-a580-f79fa2825957" />
 
 
