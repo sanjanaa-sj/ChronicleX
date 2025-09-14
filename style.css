@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #f1f1f1;
+    --secondary-text-color: #b0b0b0;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+    --card-bg: #1e1e1e;
+    --nav-bg: #121212;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: var(--primary-text-color);
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+nav {
+    background-color: var(--nav-bg);
+    box-shadow: 0 0 4px #222;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+}
+
+.ChronicleX-News img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.ChronicleX-News h5 {
+    color: white;
+}
+
+.nav-links ul {
+    gap: 16px;
+}
+
+.hover-link {
+    cursor: pointer;
+    color: var(--primary-text-color);
+    transition: color 0.3s;
+}
+
+.hover-link:hover {
+    color: var(--accent-color);
+}
+
+.nav-items.active {
+    color: var(--accent-color);
+}
+
+/* 🔍 Search Bar */
+.search-bar {
+    height: 40px;
+    gap: 8px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.news-input {
+    width: 220px;
+    height: 100%;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    background: transparent;
+    color: var(--primary-text-color);
+}
+
+.search-button {
+    background: var(--accent-color);
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.search-button:hover {
+    background: var(--accent-color-dark);
+}
+
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+}
+
+/*  Cards Layout */
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: stretch; /* ensures equal height */
+}
+
+.card {
+    flex: 1 1 calc(33.33% - 20px); /* 3 per row */
+    max-width: 360px;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: var(--card-bg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    transform: translateY(-4px);
+}
+
+.card-header img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-source {
+    margin-block: 12px;
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+}
+
+/*  Hamburger menu */
+.hamburger-menu {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: -1.9rem;
+    color: white;
+}
+
+/*  Responsive */
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc(50% - 20px); /* 2 per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .nav-links {
+        max-height: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .nav-links.open {
+        max-height: 300px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-links ul {
+        gap: 12px;
+        flex-direction: column;
+        margin-top: 12px;
+    }
+
+    .search-bar {
+        margin-top: 12px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .news-input {
+        width: calc(100% - 90px);
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-input {
+        width: 100%;
+    }
+
+    .search-button {
+        padding: 6px 16px;
+    }
+}
